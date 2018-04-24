@@ -20,6 +20,8 @@ while continua:
           2-remover item
           3-alterar item
           4-imprimir estoque
+          5-produtos faltando
+          6-valor total do estoque
           ''' 
           )
 
@@ -65,11 +67,27 @@ while continua:
                 estoque[nome][0]=variavel+quantidade
                 estoque[nome][1]=valor                
                 print('Novo estoque de {0}: {1} unidades, {2} reais cada' .format(nome,estoque[nome][0],estoque[nome][1]))
-    else:
+    
+    elif escolha==4:
         print(estoque)
         
+    elif escolha==5:
+        lista=[]
+        for i in estoque:
+            if estoque[i][0]<0:
+                lista.append(i)
+        print('Os produtos em falta são:')
+        for e in lista:
+            print(e)
+    
+    else:
+        total=0
+        for i in estoque:
+            valor_produtos=estoque[i][1]*estoque[i][0]
+            total+=valor_produtos
+        print('O valor monetário total do estoque em reais é: {0}' .format(total))  
         
-        
+
         
 with open ('arquivo.txt','w') as arquivo:
     estoque_js=json.dumps(estoque,sort_keys=True,indent=4)
