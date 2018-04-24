@@ -4,8 +4,11 @@ Created on Sun Apr 22 21:35:52 2018
 
 @author: Samuel Porto
 """
+import json
 
-estoque={}
+with open('arquivo.txt','r') as arquivo:
+    conteudo=arquivo.read()
+    estoque=json.loads(conteudo)
 
 continua=True
 
@@ -54,9 +57,13 @@ while continua:
             print('Novo estoque de {0}: {1}' .format(nome,estoque[nome]))
     else:
         print(estoque)
-
-
-
+        
+        
+        
+        
+with open ('arquivo.txt','w') as arquivo:
+    estoque_js=json.dumps(estoque,sort_keys=True,indent=4)
+    conteudo=arquivo.write(estoque_js)
 
 
 
