@@ -34,11 +34,15 @@ while continua:
         if nome in estoque:
             print('Produto já cadastrado')        
         else:
-            quantidade=int(input('Quantidade inicial: '))
-            if quantidade<0:
-                print('A quantidade inicial não pode ser negativa!')
+            valor=float(input('Valor unitário em reais: '))
+            if valor<0:
+                print('O preço não pode ser negativo!')
             else:
-                estoque[nome]=quantidade
+                quantidade=int(input('Quantidade inicial: '))
+                if quantidade<0:
+                    print('A quantidade inicial não pode ser negativa!')
+                else:
+                    estoque[nome]=quantidade,valor
                 
     elif escolha==2:
         nome=input('Nome do produto: ')
@@ -52,9 +56,15 @@ while continua:
         if nome not in estoque:
             print('Elemento não encontrado')
         else:
-            quantidade=int(input('Quantidade: '))
-            estoque[nome]+=quantidade
-            print('Novo estoque de {0}: {1}' .format(nome,estoque[nome]))
+            valor=float(input('Novo valor unitário em reais: '))
+            if valor<0:
+                print('O preço não pode ser negativo!')
+            else:
+                quantidade=int(input('Alteração na quantidade: '))
+                variavel=estoque[nome][0]
+                estoque[nome][0]=variavel+quantidade
+                estoque[nome][1]=valor                
+                print('Novo estoque de {0}: {1} unidades, {2} reais cada' .format(nome,estoque[nome][0],estoque[nome][1]))
     else:
         print(estoque)
         
