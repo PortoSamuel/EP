@@ -37,9 +37,12 @@ except Exception:
         else:
             try:
                 with open(arq,'w+') as arquivo:
-                    conteudo=arquivo.writelines('{}')
+                    conteudo = arquivo.writelines('{}')
                     estoque=json.loads(conteudo)
             except Exception:
+                with open(arq,'r') as arquivo:
+                    conteudo = arquivo.read()
+                    estoque=json.loads(conteudo)
                 print('Pronto, sua loja esta no sistema!')
                 criando = False
         
