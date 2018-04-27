@@ -3,7 +3,7 @@
 """
 Created on Sun Apr 22 21:35:52 2018
 
-@author: Samuel Porto
+@.author: Samuel Porto
  ft. Roger Pina"""
 import json
 
