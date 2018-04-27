@@ -1,1 +1,1 @@
-# EP.
+# Ola Professor, o EP até o item 5 está feito, segue o EP-Item5.py
