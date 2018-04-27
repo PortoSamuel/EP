@@ -1,10 +1,10 @@
-
+﻿
 # -*- coding: utf-8 -*-
 """
 Created on Sun Apr 22 21:35:52 2018
 
 @author: Samuel Porto
-"""
+ ft. Roger Pina"""
 import json
 
 print('Olá, seja bem vindo ao sistema de estoque, qual loja você gostaria de acessar ?')
